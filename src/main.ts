@@ -5,7 +5,8 @@ import { AppComponent } from './app/app.component';
 //import { ModuleClass } from './BindingDemo/BindingModule';
 //import { ModuleClass } from './app/Arithmatic operation/ArithmaticModule';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { ModuleClass } from './studentTask/studentModule';
+//import { ModuleClass } from './studentTask/studentModule';
+import { ModuleClass } from './Dependency Injection/ArithmaticModule';
 
 platformBrowserDynamic().bootstrapModule(ModuleClass)
 .catch((err)=>console.error(err));
