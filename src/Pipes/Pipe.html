@@ -1,0 +1,17 @@
+<h4>{{fname|uppercase}}</h4>
+<h4>{{lname|lowercase}}</h4>
+<h4>{{p|percent}}</h4>
+<h4>{{R|currency}}</h4>
+<h4>{{R|currency:'INR'}}</h4>
+<h4>{{dt|date}}</h4>
+<h4>{{data|json}}</h4>
+
+<hr>
+Number : <input type="text" [(ngModel)]="mynum">
+<h3>{{mynum|Cube}}</h3>
+
+<hr>
+Number : <input type="text" [(ngModel)]="num"><br>
+Power : <input type="text" [(ngModel)]="s">
+
+<h3>{{num|Power:s}}</h3>
