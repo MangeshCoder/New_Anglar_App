@@ -1,0 +1,74 @@
+<h2>welcome</h2>
+<table>
+    <tr>
+        <td>Enter number 1</td>
+        <td><input type="text" [(ngModel)]="num1"></td>
+    </tr>
+    <tr>
+        <td>Enter number 2</td>
+        <td><input type="text" [(ngModel)]="num2"></td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" value="Add" (click)="Addition(num1,num2)">
+            <input type="button" value="Sub" (click)="Subtraction(num1,num2)">
+            <input type="button" value="Mul" (click)="Multiplication(num1,num2)">
+            <input type="button" value="Div" (click)="Division(num1,num2)">
+        </td>
+    </tr>
+</table>
+<hr>
+<h2>Addtion = {{addresult}}</h2>
+<h2>Subtraction =  {{subresult}}</h2>
+<h2>Multiplication = {{mulresult}}</h2>
+<h2>Division =  {{divresult}}</h2>
+<hr>
+<table>
+    <tr>
+        <td>English</td>
+        <td><input type="text" [(ngModel)]="eng" (change)="Calculate(eng,math,sci)"></td>
+    </tr>
+    <tr>
+        <td>Math</td>
+        <td><input type="text" [(ngModel)]="math" (change)="Calculate(eng,math,sci)"></td>
+    </tr>
+    <tr>
+        <td>Science</td>
+        <td><input type="text" [(ngModel)]="sci" (change)="Calculate(eng,math,sci)"></td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td><input type="text" [(ngModel)]="txtttl"></td>
+    </tr>
+    <tr>
+        <td>Percentage</td>
+        <td><input type="text" [(ngModel)]="txtper"></td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td><input type="text" [(ngModel)]="txtres"></td>
+    </tr>
+</table>
+<hr>
+<table border="1">
+    <thead>
+        <tr>
+            <th>English</th>
+            <th>Math</th>
+            <th>Science</th>
+            <th>Total</th>
+            <th>Percentage</th>
+            <th>Statud</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{eng}}</td>
+            <td>{{math}}</td>
+            <td>{{sci}}</td>
+            <td>{{txtttl}}</td>
+            <td>{{txtper}}</td>
+            <td>{{txtres}}</td>
+        </tr>
+    </tbody>
+</table>

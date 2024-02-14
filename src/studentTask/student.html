@@ -1,0 +1,73 @@
+<table>
+    <tr>
+        <td>Roll no</td>
+        <td><input type="text" [(ngModel)]="s.rno"></td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td><input type="text" [(ngModel)]="s.name"></td>
+    </tr>
+    <tr>
+        <td>English</td>
+        <td><input type="text" [(ngModel)]="s.english" (change)="Calculate(s.english,s.math,s.science)"></td>
+    </tr>
+    <tr>
+        <td>Math</td>
+        <td><input type="text" [(ngModel)]="s.math" (change)="Calculate(s.english,s.math,s.science)"></td>
+    </tr>
+    <tr>
+        <td>Science</td>
+        <td><input type="text" [(ngModel)]="s.science" (change)="Calculate(s.english,s.math,s.science)"></td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td><input type="text" [(ngModel)]="s.total" [disabled]="true"></td>
+    </tr>
+    <tr>
+        <td>Percentage</td>
+        <td><input type="text" [(ngModel)]="s.percentage"[disabled]="true"></td>
+    </tr>
+    <tr>
+        <td>Result</td>
+        <td><input type="text" [(ngModel)]="s.result"[disabled]="true"></td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" value="submit" (click)="Add(s)" [hidden]="btnstatus">
+            <input type="button" value="update" (click)="update(s)"[hidden]="!btnstatus">
+            <input type="button" value="clear" (click)="clear()">
+        </td>
+    </tr>
+</table>
+<hr>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Roll no</th>
+            <th>Name</th>
+            <th>English</th>
+            <th>Math</th>
+            <th>Science</th>
+            <th>Total</th>
+            <th>Percentage</th>
+            <th>Result</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of student;index as i" style="color:{{s.color}}">
+            <td>{{s.rno}}</td>
+            <td>{{s.name}}</td>
+            <td>{{s.english}}</td>
+            <td>{{s.math}}</td>
+            <td>{{s.science}}</td>
+            <td>{{s.total}}</td>
+            <td>{{s.percentage}}</td>
+            <td>{{s.result}}</td>
+            <td>
+                <input type="button" value="View" (click)="ViewStudent(s,i)">
+                <input type="button" value="X" (click)="DeleteStudent(i)">
+            </td>
+        </tr>
+    </tbody>
+</table>
