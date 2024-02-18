@@ -8,7 +8,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 //import { ModuleClass } from './studentTask/studentModule';
 //import { ModuleClass } from './Dependency Injection/ArithmaticModule';
 //import { ModuleClass } from './Pipes/PipeModule';
-import { ModuleClass } from './Routing In Angular/MainModule';
+// import { ModuleClass } from './Routing In Angular/MainModule';
+import { ModuleClass } from './Routing Demo/MainModule';
 
 platformBrowserDynamic().bootstrapModule(ModuleClass)
 .catch((err)=>console.error(err));
