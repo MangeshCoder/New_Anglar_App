@@ -1,0 +1,19 @@
+<div>
+    <a routerLink="home">Home</a>
+    &nbsp;
+    <a routerLink="about">About us</a>
+    &nbsp;
+    <a [routerLink]="['contact',10]">Contact us</a>
+    &nbsp;
+    <a [routerLink]="['service',1,'pen']">Services</a>
+    &nbsp;
+    <a routerLink="/">Log Out</a>
+</div>
+<hr>
+<div style="min-height: 400px; width: 100%;">
+    <router-outlet></router-outlet>
+</div>
+<hr>
+<div>
+    <p>Copywrite <a href="http://www.ciitinstitute.com">CIIT</a> </p>
+</div>
