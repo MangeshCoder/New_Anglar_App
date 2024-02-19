@@ -15,7 +15,7 @@ import { Router } from "@angular/router";
                 </tr>
                 <tr>
                     <td>
-                        <input type="submit" value="submit" (click)="submitData(product_id,product_name)">
+                        <input type="button" value="submit" (click)="submitData(product_id,product_name)">
                     </td>
                 </tr>
               </table>
@@ -25,7 +25,9 @@ export class HomeClass{
     product_id:any;
     product_name:any;
     constructor(private rt:Router){}
-    submitData(i:any,n:any){
-        this.rt.navigateByUrl("/service/"+i+"/"+n);
+    submitData(id:any,name:any){
+        console.log(id);
+        console.log(name);
+        this.rt.navigateByUrl("/main/service/"+id+"/"+name);
     }
 }

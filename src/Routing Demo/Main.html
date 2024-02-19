@@ -1,19 +1,28 @@
-<div>
-    <a routerLink="home">Home</a>
-    &nbsp;
-    <a routerLink="about">About</a>
-    &nbsp;
-    <a [routerLink]="['Contact',10]">Contact</a>
-    &nbsp;
-    <a [routerLink]="['Service',10,'pen']">Services</a>
-    &nbsp;
-    <a routerLink="/">Log out</a>
-</div>
-<hr>
-<div style="min-height: 400px; width: 100%;">
-    <router-outlet></router-outlet>
-</div>
-<hr>
-<div>
-    <p>Copywrite <a href="http://www.ciitinstitute.com">CIIT Pune</a> </p>
+<div class="container-fluid">
+  <div class="row">
+    
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">Ciit</a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse2">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse2">
+                    <div class="navbar-nav ms-auto">
+                        <a routerLink="home" class="nav-item nav-link active">Home</a>
+                        <a routerLink="about" class="nav-item nav-link">About</a>
+                        <a [routerLink]="['Contact',10]" class="nav-item nav-link">Contact us</a>
+                        <a [routerLink]="['Service',10,'pen']" class="nav-item nav-link">services </a>
+                        <a routerLink="/" class="nav-item nav-link">Log out</a>
+                    </div>
+                   
+                </div>
+            </div>        
+        </nav>
+    <div class="col-md-9">
+        <div style="min-height: 400px; width: 100%">
+            <router-outlet></router-outlet>
+          </div>
+    </div>
+  </div>
 </div>

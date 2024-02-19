@@ -1,0 +1,74 @@
+<div>reactive form</div>
+<form [formGroup]="empform" (submit)="SubmitData(empform.value)">
+
+    <table>
+        <tr>
+            <td>Student id</td>
+            <td><input type="text" formControlName="employee_id" ></td>
+            <td>
+                <span style="color:red" *ngIf="empform.controls['employee_id'].errors">
+                    <span *ngIf="empform.controls['employee_id'].errors.required">Please enter employee id</span>
+                    <span *ngIf="empform.controls['employee_id'].errors.min">Min employee id is 1</span>
+                    <span *ngIf="empform.controls['employee_id'].errors.max">Max employee id is 1000</span>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>Student name</td>
+            <td><input type="text" formControlName="employee_name"></td>
+            <td>
+                <span style="color:red" *ngIf="empform.controls['employee_name'].errors">
+                    <span *ngIf="empform.controls['employee_name'].errors.required">Please enter employee name</span>
+                    <span *ngIf="empform.controls['employee_name'].errors.minlength">Min 2 char are allowed</span>
+                    <span *ngIf="empform.controls['employee_name'].errors.maxlength">Max 20 char are allowed</span>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>Student age</td>
+            <td><input type="text" formControlName="age"></td>
+            <td>
+                <span style="color:red" *ngIf="empform.controls['age'].errors">
+                    <span *ngIf="empform.controls['age'].errors.required">Please enter employee age</span>
+                    <span *ngIf="empform.controls['age'].errors.min">Min age are 10</span>
+                    <span *ngIf="empform.controls['age'].errors.max">Max age are 30</span>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>Email address</td>
+            <td><input type="text" formControlName="email_address"></td>
+            <td>
+                <span style="color:red" *ngIf="empform.controls['email_address'].errors">
+                     <span *ngIf="empform.controls['email_address'].errors.required">Please enter email address</span>
+                     <span *ngIf="empform.controls['email_address'].errors.minlength">Min 10 char </span>
+                     <span *ngIf="empform.controls['email_address'].errors.maxlength">Max 30 char </span>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="submit" class="btn btn-primary btn-sm" [disabled]="!empform.valid">
+            </td>
+        </tr>
+    </table>
+</form>
+<hr>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Employee id</th>
+            <th>Employee name</th>
+            <th>Age</th>
+            <th>Email address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of employeeData">
+            <td>{{e.employee_id}}</td>
+            <td>{{e.employee_name}}</td>
+            <td>{{e.age}}</td>
+            <td>{{e.email_address}}</td>
+        </tr>
+    </tbody>
+</table>

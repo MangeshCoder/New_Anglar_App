@@ -1,0 +1,84 @@
+<form [formGroup]="studentform" (submit)="SubmitData(studentform.value)">
+    <table>
+        <tr>
+            <td>student id</td>
+            <td><input type="text" formControlName="student_id"></td>
+            <td>
+                <span style="color:red" *ngIf="studentform.controls['student_id'].errors">
+                    <span *ngIf="studentform.controls['student_id'].errors.required">Please enter student id</span>
+                    <span *ngIf="studentform.controls['student_id'].errors.min">Min 2 number id allowed</span>
+                    <span *ngIf="studentform.controls['student_id'].errors.max">Max 1000 number id allowed</span>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>student name</td>
+            <td><input type="text" formControlName="student_name"></td>
+            <td>
+                <span style="color:red" *ngIf="studentform.controls['student_name'].errors">
+                    <span *ngIf="studentform.controls['student_name'].errors.required">Please enter student name</span>
+                    <span *ngIf="studentform.controls['student_name'].errors.minlength">Min 10 char</span>
+                    <span *ngIf="studentform.controls['student_name'].errors.maxlength">Max 30 char</span>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>student age</td>
+            <td><input type="text" formControlName="age"></td>
+            <td>
+                <span style="color:red" *ngIf="studentform.controls['age'].errors">
+                    <span *ngIf="studentform.controls['age'].errors.required">Please enter student age</span>
+                    <span *ngIf="studentform.controls['age'].errors.min">Min 10 age allowed</span>
+                    <span *ngIf="studentform.controls['age'].errors.max">Max 30 age allowed</span>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>mobile number</td>
+            <td><input type="text" formControlName="mobile"></td>
+            <td>
+                <span style="color:red" *ngIf="studentform.controls['mobile'].errors">
+                    <span *ngIf="studentform.controls['mobile'].errors.required">Please enter student mobile number</span>
+                    <span *ngIf="studentform.controls['mobile'].errors.pattern">10 number allowed</span>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>email address</td>
+            <td><input type="text" formControlName="email"></td>
+            <td>
+                <span style="color:red" *ngIf="studentform.controls['email'].errors">
+                    <span *ngIf="studentform.controls['email'].errors.required">Please enter email id</span>
+                    <span *ngIf="studentform.controls['email'].errors.minlength">Min 10 char</span>
+                    <span *ngIf="studentform.controls['email'].errors.maxlength">Max 30 char</span>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="submit" class="btn btn-primary" [disabled]="!studentform.valid">
+            </td>
+        </tr>
+    </table>
+</form>
+<hr>
+<table class="table table-bordred">
+    <thead>
+        <tr>
+            <th>Student id</th>
+            <th>Student name</th>
+            <th>Student age</th>
+            <th>Mobile number</th>
+            <th>Email address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of AddStudent">
+            <td>{{e.student_id}}</td>
+            <td>{{e.student_name}}</td>
+            <td>{{e.age}}</td>
+            <td>{{e.mobile}}</td>
+            <td>{{e.email}}</td>
+        </tr>
+    </tbody>
+</table>
