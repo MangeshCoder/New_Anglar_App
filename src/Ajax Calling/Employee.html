@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <table>
+                <tr>
+                    <td>Emplyee id</td>
+                    <td><input type="text" [(ngModel)]="e.employee_id"></td>
+                </tr>
+                <tr>
+                    <td>Emplyee name</td>
+                    <td><input type="text" [(ngModel)]="e.employee_name"></td>
+                </tr>
+                <tr>
+                    <td>Emplyee designation</td>
+                    <td><input type="text" [(ngModel)]="e.designation"></td>
+                </tr>
+                <tr>
+                    <td>Emplyee salary</td>
+                    <td><input type="text" [(ngModel)]="e.salary"></td>
+                </tr>
+                <tr>
+                    <td>Email address</td>
+                    <td><input type="text" [(ngModel)]="e.email_address"></td>
+                </tr>
+                <tr>
+                    <td>Mobile number</td>
+                    <td><input type="text" [(ngModel)]="e.mobile_number"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="submit" class="btn btn-primary btn-sm" (click)="AddEmployee(e)">
+                        &nbsp;
+                        <input type="button" value="Update" class="btn btn-primary btn-sm" (click)="UpdateEmployee(e)">
+                    </td>
+                </tr>
+            </table>
+            <h2>{{msg}}</h2>
+            <h2>{{msg2}}</h2>
+        </div>
+        <div class="col-md-8">
+            <table class="table table-bordred">
+                <thead>
+                    <tr>
+                        <th>Employee id</th>
+                        <th>Employee name</th>
+                        <th>Designation</th>
+                        <th>Salary</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let e of employees; index as i ">
+                        <td>{{e.employee_id}}</td>
+                        <td>{{e.employee_name}}</td>
+                        <td>{{e.designation}}</td>
+                        <td>{{e.salary}}</td>
+                        <td>{{e.email_address}}</td>
+                        <td>{{e.mobile_number}}</td>
+                        <td>
+                            <input type="button" value="View" (click)="ViewEmployee(e,i)">
+                            <input type="button" value="X" (click)="DeleteEmployee(i)">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

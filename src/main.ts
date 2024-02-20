@@ -13,7 +13,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 // import { ModuleClass } from './LoginTask/MainModule';
 // import { ModuleClass } from './Lazy Loading/MainModule';
 // import { ModuleClass } from './Angular Forms/MainModule';
-import { ModuleClass } from './Student Form/MainModule';
+// import { ModuleClass } from './Student Form/MainModule';
+import { ModuleClass } from './Ajax Calling/MainModule';
 
 platformBrowserDynamic().bootstrapModule(ModuleClass)
 .catch((err)=>console.error(err));
